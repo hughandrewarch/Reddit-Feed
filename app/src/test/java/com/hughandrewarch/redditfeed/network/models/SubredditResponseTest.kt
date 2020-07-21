@@ -41,8 +41,8 @@ internal class SubredditResponseTest {
     fun `map should map response to domain object with list of children`() {
 
         subject.children = listOf(
-            wrappedPostResponse("author-1", "title-1", "subreddit-1"),
-            wrappedPostResponse("author-2", "title-2", "subreddit-2")
+            wrappedPostResponse("author-1", "title-1", "subreddit-1", "thumbnail-1"),
+            wrappedPostResponse("author-2", "title-2", "subreddit-2", "thumbnail-2")
         )
 
         val result = SubredditResponse.map(subject)
@@ -53,8 +53,8 @@ internal class SubredditResponseTest {
                 modhash = "modhash",
                 dist = 2,
                 children = listOf(
-                    Post("subreddit-1", "title-1","author-1"),
-                    Post("subreddit-2", "title-2","author-2")
+                    Post("subreddit-1", "title-1", "author-1", "thumbnail-1"),
+                    Post("subreddit-2", "title-2", "author-2", "thumbnail-2")
                 ),
                 after = "after",
                 before = "before"
@@ -62,11 +62,17 @@ internal class SubredditResponseTest {
         )
     }
 
-    fun wrappedPostResponse(author: String, title: String, subreddit: String): DataWrapper<PostResponse> {
+    fun wrappedPostResponse(
+        author: String,
+        title: String,
+        subreddit: String,
+        thumbnail: String
+    ): DataWrapper<PostResponse> {
         val postResponse = PostResponse()
         postResponse.subreddit = subreddit
         postResponse.author = author
         postResponse.title = title
+        postResponse.thumbnail = thumbnail
 
         return DataWrapper("", postResponse)
     }

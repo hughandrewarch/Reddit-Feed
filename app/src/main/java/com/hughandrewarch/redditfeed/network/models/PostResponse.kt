@@ -10,13 +10,16 @@ class PostResponse {
     lateinit var title: String
     @SerializedName("author")
     lateinit var author: String
+    @SerializedName("thumbnail")
+    lateinit var thumbnail: String
 
     companion object {
         fun map(response: PostResponse): Post {
             return Post(
                 subreddit = response.subreddit,
                 title = response.title,
-                author = response.author
+                author = response.author,
+                thumbnail = response.thumbnail
             )
         }
     }
