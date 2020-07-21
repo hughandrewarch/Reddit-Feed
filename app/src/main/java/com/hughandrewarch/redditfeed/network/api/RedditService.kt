@@ -7,9 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface RedditService {
-//    @GET("/r/kotlin/.json")
-//    fun getSubredditPost(): Observable<Result<Void>>
 
     @GET("/r/{subreddit}/.json")
-    fun getSubredditPost(@Path("subreddit") subreddit: String): Observable<DataWrapper<SubredditResponse>>
+    fun getSubreddit(@Path("subreddit") subreddit: String): Observable<DataWrapper<SubredditResponse>>
 }
