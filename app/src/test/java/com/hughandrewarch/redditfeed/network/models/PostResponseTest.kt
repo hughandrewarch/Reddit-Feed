@@ -23,7 +23,11 @@ internal class PostResponseTest {
 
         assertEquals(
             result,
-            Post(title = "title")
+            Post(
+                subreddit = "subreddit",
+                title = "title",
+                author = "author"
+            )
         )
     }
 }

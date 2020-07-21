@@ -12,7 +12,6 @@ import com.hughandrewarch.redditfeed.domain.model.Subreddit
 import com.hughandrewarch.redditfeed.view.adapter.PostViewAdapter
 import com.hughandrewarch.redditfeed.viewmodels.SubredditViewModel
 
-
 class MainActivity : AppCompatActivity() {
 
     private val subredditViewModel: SubredditViewModel by viewModels()
@@ -37,7 +36,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val subredditObserver = Observer<Subreddit> { subreddit ->
-        // Update the UI, in this case, a TextView.
         postViewAdapter.update(subreddit.children)
     }
 }

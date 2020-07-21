@@ -24,6 +24,7 @@ class PostViewAdapter(
 
         val viewHolder = holder as PostViewHolder
         viewHolder.title.text = post.title
+        viewHolder.author.text = post.author
     }
 
     override fun getItemCount(): Int {
@@ -38,5 +39,6 @@ class PostViewAdapter(
     internal inner class PostViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         var title: TextView = itemView.findViewById(R.id.title)
+        var author: TextView = itemView.findViewById(R.id.author)
     }
 }

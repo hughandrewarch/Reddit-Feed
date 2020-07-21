@@ -24,7 +24,7 @@
             tools:text="Title" />
 
         <TextView
-            android:id="@+id/user"
+            android:id="@+id/author"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
