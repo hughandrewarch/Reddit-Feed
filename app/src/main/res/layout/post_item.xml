@@ -8,44 +8,43 @@
     android:layout_margin="8dp"
     app:cardUseCompatPadding="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="4dp"
         android:layout_marginHorizontal="8dp">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@android:drawable/btn_star"
+            android:gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_alignParentStart="true"
+            tools:background="@drawable/ic_launcher_background"
+            tools:text="5" />
+
         <TextView
             android:id="@+id/title"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/thumbnail"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@id/thumbnail"
             tools:text="Title" />
 
         <TextView
             android:id="@+id/author"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:lines="1"
             android:maxLines="1"
-            android:text="USER"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/thumbnail"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_below="@+id/title"
+            android:layout_toEndOf="@id/thumbnail"
+            android:layout_alignParentBottom="true"
             tools:text="User" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/thumbnail"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:drawableStart="@android:drawable/btn_star"
-            android:gravity="center"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:background="@drawable/ic_launcher_background"
-            tools:text="5" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>

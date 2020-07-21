@@ -13,7 +13,7 @@ class SubredditViewModel: ViewModel() {
 
     fun onTestClicked()  {
         val network = NetworkRedditRepo()
-        network.getSubreddit("kotlin")
+        network.getSubreddit("dndArt")
             .subscribeBy(
                 onNext =  {
                     subreddit.value = it
