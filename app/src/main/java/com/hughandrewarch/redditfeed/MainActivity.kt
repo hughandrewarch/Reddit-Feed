@@ -3,14 +3,9 @@ package com.hughandrewarch.redditfeed
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.hughandrewarch.redditfeed.databinding.ActivityMainBinding
-import com.hughandrewarch.redditfeed.domain.model.Subreddit
-import com.hughandrewarch.redditfeed.view.adapter.PostViewAdapter
 import com.hughandrewarch.redditfeed.viewmodels.SubredditViewModel
+import com.hughandrewarch.redditfeed.views.PostListFragment
+import com.hughandrewarch.redditfeed.views.adapter.PostViewAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,23 +14,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        subredditViewModel.subreddit.observe(this, subredditObserver)
-
-        val activityMainBinding: ActivityMainBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        activityMainBinding.viewModel = subredditViewModel
-        activityMainBinding.executePendingBindings()
-
-        postViewAdapter = PostViewAdapter(this, arrayListOf())
-
-        val postRecyclerView: RecyclerView = findViewById(R.id.post_list)
-        postRecyclerView.layoutManager = LinearLayoutManager(this)
-        postRecyclerView.adapter = postViewAdapter
-    }
-
-    private val subredditObserver = Observer<Subreddit> { subreddit ->
-        postViewAdapter.update(subreddit.children)
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frame, PostListFragment())
+        fragmentTransaction.commit()
     }
 }

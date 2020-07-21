@@ -1,10 +1,9 @@
-package com.hughandrewarch.redditfeed.view.adapter
+package com.hughandrewarch.redditfeed.views.adapter
 
+import android.R.attr.resource
 import android.app.Activity
-import android.content.ContentValues.TAG
+import android.content.Context
 import android.graphics.drawable.Drawable
-import android.opengl.Visibility
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,13 +17,13 @@ import com.bumptech.glide.request.target.Target
 import com.hughandrewarch.redditfeed.R
 import com.hughandrewarch.redditfeed.domain.model.Post
 
+
 class PostViewAdapter(
-    var context: Activity,
     var posts: List<Post>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val rootView = LayoutInflater.from(context).inflate(R.layout.post_item, parent, false)
+        val rootView = LayoutInflater.from(parent.context).inflate(R.layout.post_item, parent, false)
         return PostViewHolder(rootView)
     }
 
