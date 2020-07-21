@@ -1,33 +1,22 @@
 package com.hughandrewarch.redditfeed
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.hughandrewarch.redditfeed.network.adapters.NetworkRedditRepo
-import io.reactivex.rxjava3.kotlin.subscribeBy
+import androidx.databinding.DataBindingUtil
+import com.hughandrewarch.redditfeed.databinding.ActivityMainBinding
+import com.hughandrewarch.redditfeed.viewmodels.SubredditViewModel
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var testButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        testButton = findViewById(R.id.button)
+        val activityMainBinding: ActivityMainBinding =
+            DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        testButton.setOnClickListener{ onClick() }
+        activityMainBinding.viewModel = SubredditViewModel()
+        activityMainBinding.executePendingBindings()
     }
 
-    fun onClick() {
-        val network = NetworkRedditRepo()
-        network.getSubreddit("")
-            .subscribeBy(
-                onNext =  { it ->
-                    Toast.makeText(this, "YAS", Toast.LENGTH_LONG).show()
-                },
-                onError = { println(it) }
-            )
-    }
 }

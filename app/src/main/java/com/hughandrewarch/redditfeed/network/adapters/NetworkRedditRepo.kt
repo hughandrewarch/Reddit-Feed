@@ -16,7 +16,7 @@ class NetworkRedditRepo: RedditRepository, RetrofitRepo<RedditService>(RedditSer
 
     override fun getSubreddit(subreddit: String): Observable<Subreddit> {
 
-        return service.getSubreddit("kotlin")
+        return service.getSubreddit(subreddit)
             .map{SubredditResponse.map(it.data)}
             .subscribeOn(Schedulers.io())//TODO move subscribeOn/observeOn
             .observeOn(AndroidSchedulers.mainThread())
