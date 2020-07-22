@@ -11,15 +11,14 @@ class SubredditViewModel: ViewModel() {
         MutableLiveData<Subreddit>()
     }
 
-    fun onTestClicked()  {
+    fun getSubreddit(subreddit: String)  {
         val network = NetworkRedditRepo()
-        network.getSubreddit("dndArt")
+        network.getSubreddit(subreddit)
             .subscribeBy(
                 onNext =  {
-                    subreddit.value = it
+                    this.subreddit.value = it
                 },
                 onError = { println(it) }
             )
     }
-
 }

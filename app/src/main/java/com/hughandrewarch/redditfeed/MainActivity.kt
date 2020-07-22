@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         subredditViewModel.subreddit.observe(this, subredditObserver)
         activityMainBinding.viewModel = subredditViewModel
         activityMainBinding.executePendingBindings()
+
+        subredditViewModel.getSubreddit("kotlin")
     }
 
     private val subredditObserver = Observer<Subreddit> { subreddit ->

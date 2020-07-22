@@ -1,11 +1,11 @@
 package com.hughandrewarch.redditfeed.views.adapter
 
 import android.graphics.drawable.Drawable
+import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -21,9 +21,13 @@ class PostViewAdapter(
     val listener: (Post) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    private lateinit var userTemplate: String
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val rootView =
             LayoutInflater.from(parent.context).inflate(R.layout.post_item, parent, false)
+
+        userTemplate = parent.context.getString(R.string.username)
         return PostViewHolder(rootView)
     }
 
@@ -32,7 +36,7 @@ class PostViewAdapter(
 
         val viewHolder = holder as PostViewHolder
         viewHolder.title.text = post.title
-        viewHolder.author.text = post.author
+        viewHolder.author.text = userTemplate.replace(":user", post.author)
 
         Glide.with(viewHolder.itemView)
             .load(post.thumbnail)
