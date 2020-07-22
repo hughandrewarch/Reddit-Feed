@@ -12,6 +12,8 @@ class PostResponse {
     lateinit var author: String
     @SerializedName("thumbnail")
     lateinit var thumbnail: String
+    @SerializedName("url")
+    lateinit var url: String
 
     companion object {
         fun map(response: PostResponse): Post {
@@ -19,7 +21,8 @@ class PostResponse {
                 subreddit = response.subreddit,
                 title = response.title,
                 author = response.author,
-                thumbnail = response.thumbnail
+                thumbnail = response.thumbnail,
+                url = response.url
             )
         }
     }

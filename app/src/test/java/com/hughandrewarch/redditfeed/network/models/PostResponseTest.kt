@@ -16,6 +16,7 @@ internal class PostResponseTest {
         subject.author = "author"
         subject.title = "title"
         subject.thumbnail = "thumbnail"
+        subject.url = "url"
     }
 
     @Test
@@ -28,7 +29,8 @@ internal class PostResponseTest {
                 subreddit = "subreddit",
                 title = "title",
                 author = "author",
-                thumbnail = "thumbnail"
+                thumbnail = "thumbnail",
+                url = "url"
             )
         )
     }
