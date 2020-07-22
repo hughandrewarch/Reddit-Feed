@@ -1,13 +1,11 @@
 package com.hughandrewarch.redditfeed.views.adapter
 
-import android.R.attr.resource
-import android.app.Activity
-import android.content.Context
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -19,11 +17,13 @@ import com.hughandrewarch.redditfeed.domain.model.Post
 
 
 class PostViewAdapter(
-    var posts: List<Post>
+    var posts: List<Post>,
+    val listener: (Post) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val rootView = LayoutInflater.from(parent.context).inflate(R.layout.post_item, parent, false)
+        val rootView =
+            LayoutInflater.from(parent.context).inflate(R.layout.post_item, parent, false)
         return PostViewHolder(rootView)
     }
 
@@ -58,6 +58,8 @@ class PostViewAdapter(
                 }
             })
             .into(viewHolder.thumbnail)
+
+        viewHolder.itemView.setOnClickListener{listener(post)}
     }
 
     override fun getItemCount(): Int {

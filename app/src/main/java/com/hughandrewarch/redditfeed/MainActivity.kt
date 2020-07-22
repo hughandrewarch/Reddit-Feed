@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
             DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         val fragmentTransaction = supportFragmentManager.beginTransaction()
-        setFragmentArgument("onCreate")
 
         fragmentTransaction.replace(R.id.frame,
             postListFragment
@@ -34,30 +33,7 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.executePendingBindings()
     }
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//
-//
-//        val activityMainBinding: ActivityMainBinding =
-//            DataBindingUtil.setContentView(this, R.layout.activity_main)
-//
-//
-//        postViewAdapter = PostViewAdapter(this, arrayListOf())
-//
-//        val postRecyclerView: RecyclerView = findViewById(R.id.post_list)
-//        postRecyclerView.layoutManager = LinearLayoutManager(this)
-//        postRecyclerView.adapter = postViewAdapter
-//    }
-
     private val subredditObserver = Observer<Subreddit> { subreddit ->
         postListFragment.setPosts(subreddit.children)
-    }
-
-    private fun setFragmentArgument(test: String) {
-
-        val bundle = Bundle()
-        bundle.putString("test", test)
-        postListFragment.arguments = bundle
-
     }
 }
