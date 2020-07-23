@@ -12,8 +12,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hughandrewarch.redditfeed.R
 import com.hughandrewarch.redditfeed.databinding.PostListFragmentBinding
-import com.hughandrewarch.redditfeed.domain.model.Post
-import com.hughandrewarch.redditfeed.domain.model.Subreddit
+import com.hughandrewarch.redditfeed.data.model.Post
+import com.hughandrewarch.redditfeed.data.model.Subreddit
 import com.hughandrewarch.redditfeed.viewmodels.SubredditViewModel
 import com.hughandrewarch.redditfeed.views.adapter.PostViewAdapter
 import kotlinx.android.synthetic.main.post_list_fragment.*

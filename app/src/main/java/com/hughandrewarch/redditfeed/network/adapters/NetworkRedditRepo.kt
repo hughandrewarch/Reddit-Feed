@@ -1,8 +1,8 @@
 package com.hughandrewarch.redditfeed.network.adapters
 
-import com.hughandrewarch.redditfeed.domain.model.Subreddit
-import com.hughandrewarch.redditfeed.domain.ports.data.RedditRepository
-import com.hughandrewarch.redditfeed.domain.ports.data.RetrofitRepo
+import com.hughandrewarch.redditfeed.data.model.Subreddit
+import com.hughandrewarch.redditfeed.data.ports.RedditRepository
+import com.hughandrewarch.redditfeed.data.ports.RetrofitRepo
 import com.hughandrewarch.redditfeed.network.api.RedditService
 import com.hughandrewarch.redditfeed.network.models.SubredditResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers

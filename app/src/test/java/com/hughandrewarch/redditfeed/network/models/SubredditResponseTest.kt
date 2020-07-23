@@ -1,7 +1,7 @@
 package com.hughandrewarch.redditfeed.network.models
 
-import com.hughandrewarch.redditfeed.domain.model.Post
-import com.hughandrewarch.redditfeed.domain.model.Subreddit
+import com.hughandrewarch.redditfeed.data.model.Post
+import com.hughandrewarch.redditfeed.data.model.Subreddit
 import org.junit.Assert.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

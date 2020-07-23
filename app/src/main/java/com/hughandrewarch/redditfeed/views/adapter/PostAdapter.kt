@@ -1,7 +1,6 @@
 package com.hughandrewarch.redditfeed.views.adapter
 
 import android.graphics.drawable.Drawable
-import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +12,7 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.hughandrewarch.redditfeed.R
-import com.hughandrewarch.redditfeed.domain.model.Post
+import com.hughandrewarch.redditfeed.data.model.Post
 
 
 class PostViewAdapter(

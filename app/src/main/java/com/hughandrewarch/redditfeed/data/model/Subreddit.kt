@@ -1,4 +1,4 @@
-package com.hughandrewarch.redditfeed.domain.model
+package com.hughandrewarch.redditfeed.data.model
 
 data class Subreddit(
     val modhash: String,

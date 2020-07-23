@@ -1,4 +1,4 @@
-package com.hughandrewarch.redditfeed.domain.ports.data
+package com.hughandrewarch.redditfeed.data.ports
 
 import com.hughandrewarch.redditfeed.network.RetrofitClient
 

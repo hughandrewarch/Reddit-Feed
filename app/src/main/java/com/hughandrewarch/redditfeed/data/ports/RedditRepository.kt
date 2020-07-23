@@ -1,6 +1,6 @@
-package com.hughandrewarch.redditfeed.domain.ports.data
+package com.hughandrewarch.redditfeed.data.ports
 
-import com.hughandrewarch.redditfeed.domain.model.Subreddit
+import com.hughandrewarch.redditfeed.data.model.Subreddit
 import io.reactivex.rxjava3.core.Observable
 
 interface RedditRepository {

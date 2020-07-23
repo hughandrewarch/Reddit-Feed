@@ -1,7 +1,7 @@
 package com.hughandrewarch.redditfeed.network.models
 
 import com.google.gson.annotations.SerializedName
-import com.hughandrewarch.redditfeed.domain.model.Post
+import com.hughandrewarch.redditfeed.data.model.Post
 
 class PostResponse {
     @SerializedName("subreddit")

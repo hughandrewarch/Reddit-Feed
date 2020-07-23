@@ -1,4 +1,4 @@
-package com.hughandrewarch.redditfeed.domain.model
+package com.hughandrewarch.redditfeed.data.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

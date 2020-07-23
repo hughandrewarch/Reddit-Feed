@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.hughandrewarch.redditfeed.R
-import com.hughandrewarch.redditfeed.domain.model.Post
+import com.hughandrewarch.redditfeed.data.model.Post
 import kotlinx.android.synthetic.main.post_fragment.*
 
 class PostFragment: Fragment() {

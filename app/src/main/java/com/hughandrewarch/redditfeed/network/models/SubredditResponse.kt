@@ -1,7 +1,7 @@
 package com.hughandrewarch.redditfeed.network.models
 
 import com.google.gson.annotations.SerializedName
-import com.hughandrewarch.redditfeed.domain.model.Subreddit
+import com.hughandrewarch.redditfeed.data.model.Subreddit
 
 class SubredditResponse {
     @SerializedName("modhash")
