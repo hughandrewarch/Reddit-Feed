@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -21,6 +22,8 @@ class PostListFragment : Fragment() {
 
     private val subredditViewModel: SubredditViewModel by activityViewModels()
     private lateinit var postViewAdapter: PostViewAdapter
+    private val subreddit = "kotlin"
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,7 +55,10 @@ class PostListFragment : Fragment() {
             adapter = postViewAdapter
         }
 
-        subredditViewModel.getSubreddit("kotlin")
+        val fullSubreddit = getString(R.string.subreddit).replace(":subreddit", subreddit)
+        (activity as AppCompatActivity).supportActionBar?.title = fullSubreddit
+
+        subredditViewModel.getSubreddit(subreddit)
     }
 
     fun launchPostFragment(post: Post) {
